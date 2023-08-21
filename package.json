@@ -1,0 +1,30 @@
+{
+  "name": "weibo",
+  "version": "1.0.0",
+  "description": "基于create-vite-vue2创建的vue2项目",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite serve"
+  },
+  "author": "neterm fengge-000@163.com",
+  "license": "MIT",
+  "dependencies": {
+    "element-ui": "^2.15.13",
+    "less": "^4.2.0",
+    "vue": "^2.6.14",
+    "vue-router": "^3.5.2",
+    "vuex": "^3.6.2"
+  },
+  "devDependencies": {
+    "@vue/eslint-config-prettier": "^6.0.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.32.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-vue": "^7.17.0",
+    "sass": "^1.39.0",
+    "vite": "^2.5.3",
+    "vite-plugin-vue2": "^1.8.1",
+    "vue-template-compiler": "^2.6.14"
+  }
+}
