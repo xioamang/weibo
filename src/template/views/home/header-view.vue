@@ -11,7 +11,8 @@
         :list="list" 
         width="150px" 
         iconSize="25px" 
-        activeClass="tab-active"
+        activeClass="top-tab-active"
+        itemClass="top-tab-default"
         @change="menuChange"
       ></menu-list>
     </div>
@@ -37,23 +38,19 @@ export default {
       list:[
         {
           icon:'el-icon-s-home',
-          path:'/home'
-        },
-        {
-          icon:'el-icon-video-play',
-          path:'/home'
+          path:'/'
         },
         {
           icon:'el-icon-s-opportunity',
-          path:'/home'
+          path:'/hot'
         },
         {
           icon:'el-icon-s-comment',
-          path:'/home'
+          path:'/message'
         },
         {
           icon:'el-icon-s-custom',
-          path:'/home'
+          path:'/info'
         }
       ],
       btns:[
@@ -71,7 +68,9 @@ export default {
   },
   methods: {
     menuChange(event){
-      
+      const router = this.$router
+      router.push({ path: event.path })
+      console.log(router);
     }
   }
 }
@@ -98,8 +97,16 @@ export default {
     }
 }
 </style>
-<style>
-.tab-active{
+<style lang="less">
+.top-tab-default{
+  text-align: center;
+  padding: 5px 8px;
+  border-radius: 5px;
+    &:hover{
+        background: #f1f2f5;
+    }
+}
+.top-tab-active{
   color: coral;
 }
 </style>

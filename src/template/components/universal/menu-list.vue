@@ -1,5 +1,10 @@
 <template>
-  <div class="menu">
+  <div 
+    class="menu"
+    :class="{
+          vertical
+    }"
+  >
       <div 
         class="item" 
         v-for="(item,index) in list" 
@@ -8,7 +13,9 @@
           width
         }"
         :class="{
-          [activeClass]:activeIndex===index
+          [activeClass]: activeIndex===index,
+          'item-vertical': vertical,
+          [itemClass]: true,
         }"
         @click="changeActive(index)"
       >
@@ -17,7 +24,10 @@
           :style="{
             'font-size':iconSize
           }"
-          ></i>
+        ></i>
+        <span>
+          {{item.text}}
+        </span>
       </div>
   </div>
 </template>
@@ -42,7 +52,15 @@ export default {
           type:String,
           required:true
         },
+        // fontSize: {
+        //   type:String,
+        //   required:true
+        // },
         activeClass: {  
+          type:String,
+          default:''
+        },
+        itemClass: {
           type:String,
           default:''
         }
@@ -72,5 +90,12 @@ export default {
       height: 100%;
       cursor: pointer;
     }
+    .item-vertical{
+      cursor: pointer;
+      height: unset;
+    }
+  }
+  .vertical{
+    display: block;
   }
 </style>

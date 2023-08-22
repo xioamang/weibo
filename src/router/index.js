@@ -1,5 +1,9 @@
 import VueRouter from 'vue-router'
-import home from './../template/pages/home.vue'
+import index from '../template/pages/index.vue'
+import hot from '../template/pages/home/hot.vue'
+import message from '../template/pages/home/message.vue'
+import info from '../template/pages/home/info.vue'
+import home from '../template/pages/home/home.vue'
 import Vue from 'vue'
 
 Vue.use(VueRouter)
@@ -8,9 +12,30 @@ export default new VueRouter({
     //配置路由
     routes: [
         {
-            name: 'home',
             path: '/',
-            component: home
+            component: index,
+            children: [
+                {
+                    name: 'hot',
+                    path: 'hot',
+                    component: hot
+                },
+                {
+                    name: 'message',
+                    path: 'message',
+                    component: message
+                },
+                {
+                    name: 'info',
+                    path: 'info',
+                    component: info
+                },
+                {
+                    name: 'home',
+                    path: '',
+                    component: home
+                },
+            ]
         }
     ]
 })
